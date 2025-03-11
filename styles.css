@@ -1,0 +1,76 @@
+/* Estilização básica */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Fundo preto, estilo terminal */
+    color: #0f0; /* Texto verde, estilo terminal */
+    font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada */
+    overflow: hidden; /* Remove barras de rolagem */
+}
+
+.terminal {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    border: 2px solid #0f0; /* Borda verde */
+    border-radius: 5px;
+    background-color: #000; /* Fundo preto */
+    overflow-y: auto; /* Permite rolagem vertical se necessário */
+    height: 80vh; /* Altura máxima do terminal */
+}
+
+.header {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.prompt {
+    color: #ff4500; /* Cor laranja para o prompt */
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #aaa; /* Cinza claro para o rodapé */
+}
+
+/* Animação de piscar do cursor */
+.prompt::after {
+    content: '_';
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Rolagem personalizada para o terminal */
+.terminal::-webkit-scrollbar {
+    width: 10px;
+}
+
+.terminal::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.terminal::-webkit-scrollbar-thumb {
+    background: #0f0;
+    border-radius: 5px;
+}
+
+.terminal::-webkit-scrollbar-thumb:hover {
+    background: #0c0;
+}
